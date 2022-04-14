@@ -1,29 +1,28 @@
 package com.coord.model;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 @Entity
-@Table(name = "basin")
+@Table(name = "block")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Basin.findAll", query = "SELECT b FROM Basin b"),
-    @NamedQuery(name = "Basin.findById", query = "SELECT b FROM Basin b WHERE b.id = :id"),
-    @NamedQuery(name = "Basin.findByName", query = "SELECT b FROM Basin b WHERE b.name = :name")})
+    @NamedQuery(name = "Block.findAll", query = "SELECT b FROM Block b"),
+    @NamedQuery(name = "Block.findById", query = "SELECT b FROM Block b WHERE b.id = :id"),
+    @NamedQuery(name = "Block.findByName", query = "SELECT b FROM Block b WHERE b.name = :name")})
 
-public class Basin implements Serializable {
+public class Block implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
@@ -36,13 +35,18 @@ public class Basin implements Serializable {
     @Column(name = "name")
     private String name;
     
-    @OneToMany(mappedBy = "idBasin")
-    private Collection<Block> blockCollection;
+    @JoinColumn(name = "id_basin", referencedColumnName = "id")
+    @ManyToOne
+    private Basin idBasin;
+    
+    @JoinColumn(name = "id_ead", referencedColumnName = "id")
+    @ManyToOne
+    private Ead idEad;
 
-    public Basin() {
+    public Block() {
     }
 
-    public Basin(Integer id) {
+    public Block(Integer id) {
         this.id = id;
     }
 
@@ -62,13 +66,20 @@ public class Basin implements Serializable {
         this.name = name;
     }
 
-    @XmlTransient
-    public Collection<Block> getBlockCollection() {
-        return blockCollection;
+    public Basin getIdBasin() {
+        return idBasin;
     }
 
-    public void setBlockCollection(Collection<Block> blockCollection) {
-        this.blockCollection = blockCollection;
+    public void setIdBasin(Basin idBasin) {
+        this.idBasin = idBasin;
+    }
+
+    public Ead getIdEad() {
+        return idEad;
+    }
+
+    public void setIdEad(Ead idEad) {
+        this.idEad = idEad;
     }
 
     @Override
@@ -81,10 +92,10 @@ public class Basin implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Basin)) {
+        if (!(object instanceof Block)) {
             return false;
         }
-        Basin other = (Basin) object;
+        Block other = (Block) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -93,7 +104,7 @@ public class Basin implements Serializable {
 
     @Override
     public String toString() {
-        return "com.coord.model.Basin[ id=" + id + " ]";
+        return "com.coord.model.Block[ id=" + id + " ]";
     }
     
 }
