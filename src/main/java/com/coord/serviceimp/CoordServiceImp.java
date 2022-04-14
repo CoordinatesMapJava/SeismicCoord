@@ -1,5 +1,9 @@
 package com.coord.serviceimp;
 
-public class CoordServiceImp {
+import com.coord.service.CoordService;
+import org.springframework.stereotype.Service;
+
+@Service(value = "coordRepoService")
+public class CoordServiceImp implements CoordService {
     
 }

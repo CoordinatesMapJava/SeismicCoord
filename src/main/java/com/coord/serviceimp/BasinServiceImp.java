@@ -1,5 +1,9 @@
 package com.coord.serviceimp;
 
-public class BasinServiceImp {
+import com.coord.service.BasinService;
+import org.springframework.stereotype.Service;
+
+@Service(value = "basinRepoService")
+public class BasinServiceImp implements BasinService {
     
 }

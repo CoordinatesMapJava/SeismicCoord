@@ -1,5 +1,9 @@
 package com.coord.serviceimp;
 
-public class SeismicProgramServiceImp {
+import com.coord.service.SeismicProgramService;
+import org.springframework.stereotype.Service;
+
+@Service(value = "seismicProgramRepoService")
+public class SeismicProgramServiceImp implements SeismicProgramService {
     
 }
