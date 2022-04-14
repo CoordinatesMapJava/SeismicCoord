@@ -1,5 +1,5 @@
 package com.coord.service;
 
-public class SeismicProgramService {
+public interface SeismicProgramService {
     
 }

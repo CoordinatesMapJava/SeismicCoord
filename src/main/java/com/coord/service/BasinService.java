@@ -1,5 +1,5 @@
 package com.coord.service;
 
-public class BasinService {
+public interface BasinService {
     
 }

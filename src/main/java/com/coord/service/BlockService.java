@@ -1,5 +1,5 @@
 package com.coord.service;
 
-public class BlockService {
+public interface BlockService {
     
 }
