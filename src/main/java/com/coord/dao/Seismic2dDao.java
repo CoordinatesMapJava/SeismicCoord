@@ -1,5 +1,13 @@
 package com.coord.dao;
 
-public class Seismic2dDao {
+import com.coord.model.Seismic2d;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.Scope;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Scope(BeanDefinition.SCOPE_PROTOTYPE)
+public interface Seismic2dDao extends JpaRepository <Seismic2d, Long> {
     
 }
