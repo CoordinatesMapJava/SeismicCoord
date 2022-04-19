@@ -1,13 +1,8 @@
 package com.coord.model;
 
-import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -24,15 +19,8 @@ import lombok.ToString;
 @Table(name = "seismic2d")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @ToString @EqualsAndHashCode
-public class Seismic2d implements Serializable {
+public class Seismic2d extends EntityBase {
 
-    private static final long serialVersionUID = 1L;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id")
-    private Integer id;
     @Column(name = "name")
     private String name;
     @Column(name = "acquisition_date")

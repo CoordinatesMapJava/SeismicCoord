@@ -1,12 +1,7 @@
 package com.coord.model;
 
-import java.io.Serializable;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -21,15 +16,8 @@ import lombok.ToString;
 @Table(name = "coord")
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @ToString @EqualsAndHashCode
-public class Coord implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Coord extends EntityBase {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id")
-    private Integer id;
     @Column(name = "stn")
     private Integer stn;
     @Column(name = "lat")
@@ -42,7 +30,6 @@ public class Coord implements Serializable {
     private Double y;
     @Column(name = "z")
     private Double z;
-    
     @JoinColumn(name = "id_seismic2d")
     @ManyToOne
     private Seismic2d idSeismic2d;
