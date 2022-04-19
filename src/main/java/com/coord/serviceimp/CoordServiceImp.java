@@ -15,7 +15,8 @@ public class CoordServiceImp implements CoordService {
     
     @Override
     public List<Coord> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println(coordDao);
+        return coordDao.findAll();
     }
 
     @Override

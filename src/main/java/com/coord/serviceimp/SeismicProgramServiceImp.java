@@ -15,7 +15,8 @@ public class SeismicProgramServiceImp implements SeismicProgramService {
     
     @Override
     public List<SeismicProgram> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println(seismicProgram);
+        return seismicProgram.findAll();
     }
 
     @Override

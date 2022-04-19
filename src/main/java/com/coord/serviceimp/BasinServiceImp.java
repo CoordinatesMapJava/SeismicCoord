@@ -15,7 +15,8 @@ public class BasinServiceImp implements BasinService {
     
     @Override
     public List<Basin> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println(basinDao);
+        return basinDao.findAll();
     }
     
     @Override

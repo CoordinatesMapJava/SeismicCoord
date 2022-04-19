@@ -15,7 +15,8 @@ public class EadServiceImp implements EadService {
     
     @Override
     public List<Ead> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println(eadDao);
+        return eadDao.findAll();
     }
 
     @Override

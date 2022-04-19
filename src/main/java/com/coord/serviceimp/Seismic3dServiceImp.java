@@ -15,7 +15,8 @@ public class Seismic3dServiceImp implements Seismic3dService {
     
     @Override
     public List<Seismic3d> getAll() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        System.out.println(seismic3dDao);
+        return seismic3dDao.findAll();
     }
 
     @Override
