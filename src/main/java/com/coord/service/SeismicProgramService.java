@@ -6,6 +6,6 @@ import java.util.List;
 public interface SeismicProgramService {
 
     public List <SeismicProgram> getAll();
-    public SeismicProgram save (SeismicProgram save);
+    public SeismicProgram save (SeismicProgram s);
     
 }

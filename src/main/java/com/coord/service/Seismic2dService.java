@@ -6,6 +6,6 @@ import java.util.List;
 public interface Seismic2dService {
     
     public List <Seismic2d> getAll();
-    public Seismic2d save (Seismic2d save);
+    public Seismic2d save (Seismic2d s);
     
 }

@@ -6,6 +6,6 @@ import java.util.List;
 public interface CoordService {
     
     public List <Coord> getAll();
-    public Coord save (Coord save);
+    public Coord save (Coord s);
     
 }

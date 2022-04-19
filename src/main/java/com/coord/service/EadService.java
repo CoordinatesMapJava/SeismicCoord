@@ -6,6 +6,6 @@ import java.util.List;
 public interface EadService {
     
     public List <Ead> getAll();
-    public Ead save (Ead save);
+    public Ead save (Ead s);
     
 }

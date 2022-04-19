@@ -6,6 +6,6 @@ import java.util.List;
 public interface BlockService {
     
     public List <Block> getAll();
-    public Block save (Block save);
+    public Block save (Block s);
     
 }

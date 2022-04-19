@@ -6,6 +6,6 @@ import java.util.List;
 public interface BasinService {
     
     public List <Basin> getAll();
-    public Basin save (Basin save);
+    public Basin save (Basin s);
     
 }
