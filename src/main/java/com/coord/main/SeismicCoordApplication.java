@@ -12,8 +12,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan("com.coord")
 public class SeismicCoordApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SeismicCoordApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SeismicCoordApplication.class, args);
+    }
 
 }
