@@ -33,10 +33,11 @@ public class RunTest implements CommandLineRunner {
         Seismic3d s3d = new Seismic3d();
         SeismicProgram sprogram = new SeismicProgram();
 
-        ead.setName("Empresa J");
-        serviceBase.save(ead);
+        //ead.setName("Empresa J");
+        //serviceBase.save(ead);
+        //System.out.println("Dados salvos com sucesso!");
         
-        System.out.println("Dados salvos com sucesso!");
+        System.out.println(serviceBase.getBySeismic2dEndCoord("0294-0182"));
         
     }
     
